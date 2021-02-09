@@ -5,17 +5,14 @@ import PageLinksSection from "../components/page-links-section/page-links-sectio
 import TwoColumnLayout from "../components/layout/two-column-layout";
 
 const MainSection = styled.div`
-  background: green;
-  height: 90vh;
 `
-const IndexPage = () => (
-  <Layout>
+const TestPage = () => (
+  <TwoColumnLayout>
     <MainSection>
-     <h1>Main Page</h1>
+        <h1>Test Page</h1>
     </MainSection>
-    <PageLinksSection />
 
-  </Layout>
+  </TwoColumnLayout>
 )
 
-export default IndexPage
+export default TestPage
