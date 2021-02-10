@@ -10,7 +10,6 @@ const SideNavigationWrapper = styled.div`
 `
 
 const MainContent = styled.div`
-    background: yellow;
 `
 const TwoColumnLayout = props => {
     return (

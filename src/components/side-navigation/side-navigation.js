@@ -3,7 +3,6 @@ import styled from "styled-components"
 import { Link } from "gatsby";
 
 const SideNavigationWrapper = styled.div`
-    background: red;
 `
 
 const LinksWrapper = styled.div`
