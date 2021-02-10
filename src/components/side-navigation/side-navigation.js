@@ -17,7 +17,6 @@ const SideNavigationLink = styled(Link)`
 
 `
 const SideNavigation = props => {
-    let page = props.pageContent;
     let links = ['main', 'archive'];
     return (
        <SideNavigationWrapper>

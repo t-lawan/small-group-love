@@ -4,7 +4,8 @@ const initalState = {
   pages: [],
   navbar_links: [],
   site_info: null,
-  isLoaded: false
+  isLoaded: false,
+  projects: []
 }
 
 const reducer = (state = initalState, action) => {
@@ -16,6 +17,10 @@ const reducer = (state = initalState, action) => {
     case ActionTypes.SET_NAVBAR_LINKS:
       return Object.assign({}, state, {
         navbar_links: action.navbar_links
+      })
+    case ActionTypes.SET_PROJECTS:
+      return Object.assign({}, state, {
+        projects: action.projects
       })
     case ActionTypes.SET_SITE_INFO:
       return Object.assign({}, state, {

@@ -1,4 +1,5 @@
 export const SET_PAGES = "SET_PAGES";
+export const SET_PROJECTS = "SET_PROJECTS";
 export const SET_SITE_INFO= "SET_SITE_INFO";
 export const SET_NAVBAR_LINKS = "SET_NAVBAR_LINKS";
 export const IS_LOADED = "IS_LOADED";
@@ -14,6 +15,13 @@ export const setPages = (pages) => {
     return {
         type: SET_PAGES,
         pages: pages
+    }
+}
+
+export const setProjects = (projects) => {
+    return {
+        type: SET_PROJECTS,
+        projects: projects
     }
 }
 

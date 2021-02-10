@@ -2,7 +2,7 @@ import React from "react"
 import { connect } from "react-redux"
 import { useStaticQuery, graphql } from "gatsby"
 import { Convert } from "../../utility/convert"
-import { isLoaded, setNavbarLinks, setPages } from "../../store/actions"
+import { isLoaded, setNavbarLinks, setPages, setProjects } from "../../store/actions"
 
 const State = props => {
   const data = useStaticQuery(
@@ -36,6 +36,34 @@ const State = props => {
                   raw
                 }
               }
+              type
+            }
+          }
+        }
+        allContentfulProject {
+          edges {
+            node {
+              contentful_id
+              startDate
+              endDate
+              title
+              isCurrent
+              contentSection {
+                contentful_id
+                text {
+                  raw
+                }
+                title
+                type
+                images {
+                  fluid(quality: 100, maxWidth: 2000) {
+                    aspectRatio
+                    src
+                    srcSet
+                    sizes
+                  }
+                }
+              }
             }
           }
         }
@@ -43,7 +71,11 @@ const State = props => {
     `
   )
   if (!props.isLoaded) {
-    let { allContentfulNavigationLink, allContentfulPage } = data
+    let {
+      allContentfulNavigationLink,
+      allContentfulPage,
+      allContentfulProject
+    } = data
 
     let navbarLinks = Convert.toModelArray(
       allContentfulNavigationLink,
@@ -51,12 +83,15 @@ const State = props => {
     )
 
     let pages = Convert.toModelArray(allContentfulPage, Convert.toPageModel)
-
+    let projects = Convert.toModelArray(
+      allContentfulProject,
+      Convert.toProjectModel
+    )
     props.setNavbarLinks(navbarLinks)
 
     props.setPages(pages)
     // props.setSiteInfo(siteInfo)
-    // props.setSidebarLinks(sidebarLinks)
+    props.setProjects(projects)
     props.loaded()
   }
 
@@ -73,6 +108,7 @@ const mapDispatchToProps = dispatch => {
   return {
     setNavbarLinks: navbar_links => dispatch(setNavbarLinks(navbar_links)),
     setPages: pages => dispatch(setPages(pages)),
+    setProjects: projects => dispatch(setProjects(projects)),
     loaded: () => dispatch(isLoaded())
   }
 }

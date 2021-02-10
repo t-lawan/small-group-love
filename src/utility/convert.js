@@ -3,6 +3,7 @@ import { PageLink } from "../models/PageLink";
 import { NavigationLink } from "../models/NavigationLink";
 import { PageModel } from "../models/PageModel";
 import { ContentModel } from "../models/ContentModel";
+import { ProjectModel } from "../models/ProjectModel";
 
 export class Convert {
 
@@ -42,6 +43,24 @@ export class Convert {
     return new PageModel(
       contentfulModel.contentful_id,
       contentfulModel.title, 
+      contentfulModel.type,
+      content
+    )
+  }
+
+  static toProjectModel = contentfulModel => {
+    let content = []
+    if(contentfulModel.contentSection){
+      contentfulModel.contentSection.forEach((cn) => {
+        content.push(Convert.toContentModel(cn));
+      })
+    }
+    return new ProjectModel(
+      contentfulModel.contentful_id,
+      contentfulModel.title, 
+      contentfulModel.isCurrent, 
+      contentfulModel.startDate, 
+      contentfulModel.endDate,
       content
     )
   }
