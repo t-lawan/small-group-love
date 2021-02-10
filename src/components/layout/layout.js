@@ -2,6 +2,8 @@ import React from "react"
 import styled from "styled-components"
 import PropTypes from "prop-types"
 import { GlobalStyle, TwoColumnSection } from "../../index.styles"
+import State from "../state/state";
+
 const LayoutWrapper = styled.div`
   /* padding: 1rem;
   max-height: 100vh;
@@ -22,6 +24,7 @@ const Layout = props => {
   return (
     <LayoutWrapper>
       <GlobalStyle />
+      <State />
       <MainWrapper>
         <Section>
             {props.children}
