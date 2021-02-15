@@ -15,7 +15,7 @@ const TwoColumnLayout = props => {
     return (
       <Layout>
           <TwoColumnSection>
-              <SideNavigation />
+              <SideNavigation showArchive={props.showArchive ? props.showArchive : false}/>
               <MainContent>
                   {props.children}
               </MainContent>

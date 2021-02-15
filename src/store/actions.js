@@ -2,6 +2,7 @@ export const SET_PAGES = "SET_PAGES";
 export const SET_PROJECTS = "SET_PROJECTS";
 export const SET_SITE_INFO= "SET_SITE_INFO";
 export const SET_NAVBAR_LINKS = "SET_NAVBAR_LINKS";
+export const SET_SIDE_NAVBAR_LINKS = "SET_SIDE_NAVBAR_LINKS";
 export const IS_LOADED = "IS_LOADED";
 
 
@@ -36,5 +37,12 @@ export const setNavbarLinks = (navbar_links) => {
     return {
         type: SET_NAVBAR_LINKS,
         navbar_links: navbar_links
+    }
+}
+
+export const setSideNavbarLinks = (side_navbar_links) => {
+    return {
+        type: SET_SIDE_NAVBAR_LINKS,
+        side_navbar_links: side_navbar_links
     }
 }

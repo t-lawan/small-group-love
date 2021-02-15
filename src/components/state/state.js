@@ -2,7 +2,13 @@ import React from "react"
 import { connect } from "react-redux"
 import { useStaticQuery, graphql } from "gatsby"
 import { Convert } from "../../utility/convert"
-import { isLoaded, setNavbarLinks, setPages, setProjects } from "../../store/actions"
+import {
+  isLoaded,
+  setNavbarLinks,
+  setPages,
+  setProjects,
+  setSideNavbarLinks
+} from "../../store/actions"
 
 const State = props => {
   const data = useStaticQuery(
@@ -22,6 +28,20 @@ const State = props => {
             }
           }
         }
+        allContentfulSideNavigationLink {
+          edges {
+            node {
+              contentful_id
+              title
+              linkedPage {
+                contentful_id
+                title
+                url
+              }
+              order
+            }
+          }
+        }
         allContentfulPage {
           edges {
             node {
@@ -34,6 +54,14 @@ const State = props => {
                 type
                 text {
                   raw
+                }
+                images {
+                  fluid(quality: 100, maxWidth: 2000) {
+                    aspectRatio
+                    src
+                    srcSet
+                    sizes
+                  }
                 }
               }
               type
@@ -64,6 +92,7 @@ const State = props => {
                   }
                 }
               }
+              url
             }
           }
         }
@@ -73,6 +102,7 @@ const State = props => {
   if (!props.isLoaded) {
     let {
       allContentfulNavigationLink,
+      allContentfulSideNavigationLink,
       allContentfulPage,
       allContentfulProject
     } = data
@@ -82,12 +112,18 @@ const State = props => {
       Convert.toNavigationLink
     )
 
+    let sideNavbarLinks = Convert.toModelArray(
+      allContentfulSideNavigationLink,
+      Convert.toSideNavigationLink
+    )
+
     let pages = Convert.toModelArray(allContentfulPage, Convert.toPageModel)
     let projects = Convert.toModelArray(
       allContentfulProject,
       Convert.toProjectModel
     )
     props.setNavbarLinks(navbarLinks)
+    props.setSideNavbarLinks(sideNavbarLinks)
 
     props.setPages(pages)
     // props.setSiteInfo(siteInfo)
@@ -107,6 +143,8 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
   return {
     setNavbarLinks: navbar_links => dispatch(setNavbarLinks(navbar_links)),
+    setSideNavbarLinks: side_navbar_links =>
+      dispatch(setSideNavbarLinks(side_navbar_links)),
     setPages: pages => dispatch(setPages(pages)),
     setProjects: projects => dispatch(setProjects(projects)),
     loaded: () => dispatch(isLoaded())

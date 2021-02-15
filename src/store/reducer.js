@@ -3,6 +3,7 @@ import * as ActionTypes from "./actions"
 const initalState = {
   pages: [],
   navbar_links: [],
+  side_navbar_links: [],
   site_info: null,
   isLoaded: false,
   projects: []
@@ -17,6 +18,10 @@ const reducer = (state = initalState, action) => {
     case ActionTypes.SET_NAVBAR_LINKS:
       return Object.assign({}, state, {
         navbar_links: action.navbar_links
+      })
+    case ActionTypes.SET_SIDE_NAVBAR_LINKS:
+      return Object.assign({}, state, {
+        side_navbar_links: action.side_navbar_links
       })
     case ActionTypes.SET_PROJECTS:
       return Object.assign({}, state, {

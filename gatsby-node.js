@@ -16,6 +16,7 @@ const path = require(`path`)
 exports.createPages = ({ graphql, actions }) => {
     const { createPage } = actions
     const page = path.resolve(`src/templates/page.js`)
+    const project = path.resolve(`src/templates/project.js`)
     // Query for markdown nodes to use in creating pages.
     // You can query for whatever data you want to create pages for e.g.
     // products, portfolio items, landing pages, etc.
@@ -36,8 +37,44 @@ exports.createPages = ({ graphql, actions }) => {
                       text {
                         raw
                       }
+                      images {
+                        fluid(quality: 100, maxWidth: 2000) {
+                          aspectRatio
+                          src
+                          srcSet
+                          sizes
+                        }
+                      }
                     }
                     type
+                  }
+                }
+              }
+              allContentfulProject {
+                edges {
+                  node {
+                    contentful_id
+                    startDate
+                    endDate
+                    title
+                    isCurrent
+                    contentSection {
+                      contentful_id
+                      text {
+                        raw
+                      }
+                      title
+                      type
+                      images {
+                        fluid(quality: 100, maxWidth: 2000) {
+                          aspectRatio
+                          src
+                          srcSet
+                          sizes
+                        }
+                      }
+                    }
+                    url
                   }
                 }
               }
@@ -55,6 +92,16 @@ exports.createPages = ({ graphql, actions }) => {
           // Path for this page — required
           path: `${edge.node.url}`,
           component: page,
+          context: edge.node,
+        })
+      })
+
+      result.data.allContentfulProject.edges.forEach(edge => {
+
+        createPage({
+          // Path for this page — required
+          path: `${edge.node.url}`,
+          component: project,
           context: edge.node,
         })
       })

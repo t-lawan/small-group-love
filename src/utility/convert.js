@@ -4,6 +4,7 @@ import { NavigationLink } from "../models/NavigationLink";
 import { PageModel } from "../models/PageModel";
 import { ContentModel } from "../models/ContentModel";
 import { ProjectModel } from "../models/ProjectModel";
+import { SideNavigationLink } from "../models/SideNavigationLink";
 
 export class Convert {
 
@@ -18,7 +19,7 @@ export class Convert {
     return new PageLink(
       contentfulModel.contentful_id,
       contentfulModel.title,
-      contentfulModel.url
+      contentfulModel.url.trim()
     )
   }
 
@@ -58,6 +59,7 @@ export class Convert {
     return new ProjectModel(
       contentfulModel.contentful_id,
       contentfulModel.title, 
+      contentfulModel.url, 
       contentfulModel.isCurrent, 
       contentfulModel.startDate, 
       contentfulModel.endDate,
@@ -73,6 +75,16 @@ export class Convert {
       Convert.toPageLink(contentfulModel.linkedPage) 
     )
   }
+
+  static toSideNavigationLink = contentfulModel => {
+    return new SideNavigationLink(
+      contentfulModel.contentful_id,
+      contentfulModel.title,
+      contentfulModel.order,
+      Convert.toPageLink(contentfulModel.linkedPage) 
+    )
+  }
+
 
 
   static toModelArray = (query, modelConverter) => {

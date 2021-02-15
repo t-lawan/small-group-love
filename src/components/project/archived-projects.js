@@ -2,10 +2,10 @@ import React from "react"
 import styled from "styled-components"
 import { connect } from "react-redux"
 import moment from 'moment';
+import { ProjectsWrapper } from "./current-projects";
+import ProjectList from "./project-list";
 
-const ArchivedProjectWrapper = styled.div`
 
-`
 const ArchivedProjects = props => {
     let projects = props.projects.filter(pr => {
         return moment().isAfter(pr.end_date, 'day');
@@ -15,13 +15,13 @@ const ArchivedProjects = props => {
           return moment(a).diff(moment(b));
       })
 
+
   return (
-    <ArchivedProjectWrapper>
+    <ProjectsWrapper>
         <p> Archived Projects</p>
-        {projects.map((project, index) => (
-        <p key={index}> {project.title} </p>
-      ))}
-    </ArchivedProjectWrapper>
+        <p> * </p>
+        <ProjectList projects={projects} />
+    </ProjectsWrapper>
   )
 }
 

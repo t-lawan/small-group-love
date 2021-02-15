@@ -7,13 +7,13 @@ import PageSection from "../page-section/page-section";
 export const PageWrapper = styled.div``
 export const PageTitle = styled.p``
 const PageContent = props => {
-  let page = Convert.toPageModel(props.pageContent);
+  let page = props.page
 
   return (
     <PageWrapper>
-      {page.title ? <PageTitle> {page.title.toUpperCase()}</PageTitle> : null}
+      {/* {page.title && !props.isHome ? <PageTitle> {page.title.toUpperCase()}</PageTitle> : null} */}
       {page.content ? <Content info={page.content} /> : null}
-        <PageSection type={page.type} />
+      <PageSection type={page.type} />
     </PageWrapper>
   )
 }

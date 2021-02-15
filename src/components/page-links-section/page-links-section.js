@@ -7,17 +7,24 @@ const PageLinksSectionWrapper = styled.div`
     position: fixed;
     bottom: 0;
     width: 100%;
+    background: transparent;
 `
 
 const LinksWrapper = styled.div`
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
-    align-items: center;
+    align-items: baseline;
 `
 
 const PageLink = styled(Link)`
+    color: blue;
+    font-size: 2rem;
+`
 
+const PageLinkSpan = styled.span`
+    color: blue;
+    font-size: 2rem;
 `
 const PageLinksSection = props => {
     
@@ -29,7 +36,10 @@ const PageLinksSection = props => {
        <PageLinksSectionWrapper>
             <LinksWrapper>
             {links.map((link, index) => (
+                <React.Fragment key={index}>
                 <PageLink to={link.page.url} key={index}> {link.title.toUpperCase()} </PageLink>
+                {links.length !== index + 1 ? <PageLinkSpan> - </PageLinkSpan> : null}
+                </React.Fragment>
             ))}
 
             </LinksWrapper>
