@@ -42,9 +42,12 @@ const ImageWrapper = styled.div`
 `
 const TextWrapper = styled.div`
   width: 90%;
+  text-align: center;
 `
 export const GenerateContentSection = (section, index) => {
     let render
+    console.log('INFO', section)
+
     switch (section.type) {
       case "images":
         if (section.images) {

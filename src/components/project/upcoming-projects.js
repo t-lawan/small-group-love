@@ -3,6 +3,7 @@ import styled from "styled-components"
 import { connect } from "react-redux"
 import moment from 'moment';
 import { ProjectsWrapper } from "./current-projects";
+import ProjectList from "./project-list";
 const UpcomingProjects = props => {
   let projects = props.projects.filter(pr => {
     return moment().isBefore(pr.start_date, 'day');
@@ -15,9 +16,7 @@ const UpcomingProjects = props => {
   return (
     <ProjectsWrapper>
       <p> Forthcoming Projects</p>
-      {projects.map((project, index) => (
-        <p key={index}> {project.title} </p>
-      ))}
+      <ProjectList projects={projects} />
     </ProjectsWrapper>
   )
 }

@@ -8,7 +8,7 @@ export const PageWrapper = styled.div``
 export const PageTitle = styled.p``
 const PageContent = props => {
   let page = props.page
-
+  console.log('{AGE', page.content)
   return (
     <PageWrapper>
       {/* {page.title && !props.isHome ? <PageTitle> {page.title.toUpperCase()}</PageTitle> : null} */}

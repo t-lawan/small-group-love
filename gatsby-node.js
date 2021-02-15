@@ -50,6 +50,7 @@ exports.createPages = ({ graphql, actions }) => {
                   }
                 }
               }
+              
               allContentfulProject {
                 edges {
                   node {
@@ -75,6 +76,7 @@ exports.createPages = ({ graphql, actions }) => {
                       }
                     }
                     url
+                    participant
                   }
                 }
               }

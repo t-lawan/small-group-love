@@ -1,6 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 import { connect } from "react-redux"
+import ProjectList from "./project-list";
 
 export const ProjectsWrapper = styled.div`
   display: flex;
@@ -15,9 +16,7 @@ const CurrentProjects = props => {
   return (
     <ProjectsWrapper>
       <p> Currently Showing</p>
-      {projects.map((project, index) => (
-        <p key={index}> {project.title} </p>
-      ))}
+      <ProjectList projects={projects} />
     </ProjectsWrapper>
   )
 }

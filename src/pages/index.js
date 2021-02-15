@@ -7,7 +7,7 @@ import TwoColumnLayout from "../components/layout/two-column-layout"
 import PageContent from "../components/page-content/page-content";
 
 const MainSection = styled.div`
-  height: 90vh;
+  /* height: 90vh; */
 `
 const IndexPage = props => {
 
