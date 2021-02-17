@@ -24,32 +24,40 @@ exports.createPages = ({ graphql, actions }) => {
     return graphql(
       `
         {
-            allContentfulPage {
-                edges {
-                  node {
-                    contentful_id
-                    title
-                    url
-                    contentSection {
-                      contentful_id
-                      title
-                      type
-                      text {
-                        raw
-                      }
-                      images {
-                        fluid(quality: 100, maxWidth: 2000) {
-                          aspectRatio
-                          src
-                          srcSet
-                          sizes
-                        }
-                      }
+          allContentfulPage {
+            edges {
+              node {
+                contentful_id
+                title
+                url
+                contentSection {
+                  contentful_id
+                  title
+                  type
+                  text {
+                    raw
+                  }
+                  images {
+                    fluid(quality: 100, maxWidth: 2000) {
+                      aspectRatio
+                      src
+                      srcSet
+                      sizes
                     }
-                    type
+                  }
+                }
+                type
+                backgroundImage {
+                  fluid(quality: 100, maxWidth: 2000) {
+                    aspectRatio
+                    src
+                    srcSet
+                    sizes
                   }
                 }
               }
+            }
+          }
               
               allContentfulProject {
                 edges {
