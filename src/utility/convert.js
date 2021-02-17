@@ -45,7 +45,8 @@ export class Convert {
       contentfulModel.contentful_id,
       contentfulModel.title, 
       contentfulModel.type,
-      content
+      content,
+      contentfulModel.backgroundImage
     )
   }
 

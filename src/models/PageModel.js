@@ -3,10 +3,12 @@ export class PageModel {
     title;
     content;
     type;
-    constructor(id,title, type, content) {
+    backgroundImage;
+    constructor(id,title, type, content, backgroundImage = null) {
         this.id = id;
         this.title = title;
         this.content = content;
-        this.type = type
+        this.type = type;
+        this.backgroundImage = backgroundImage;
     }
 }

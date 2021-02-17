@@ -2,19 +2,23 @@ import React from "react"
 import styled from "styled-components"
 import { connect } from "react-redux"
 import { Link } from "gatsby";
+import { StyledLink } from "../../index.styles";
 
 const SideNavigationWrapper = styled.div`
+    padding-left: 1rem;
 `
 
 const LinksWrapper = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
-    align-items: center;
+    /* align-items: center; */
 `
 
-const SideNavigationLink = styled(Link)`
+const SideNavigationLink = styled(StyledLink)`
     color: blue;
+    padding-top: 1rem;
+    font-size: 3rem;
 `
 const SideNavigation = props => {
     let links = [];

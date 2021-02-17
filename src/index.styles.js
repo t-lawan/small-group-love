@@ -1,4 +1,5 @@
 import styled, { createGlobalStyle } from "styled-components"
+import { Link } from "gatsby";
 
 export const size = {
   mobileS: "320px",
@@ -122,4 +123,11 @@ export const TwoColumnSection = styled.div`
     grid-template-columns: 1fr;
   } */
   /* margin-top: 2rem; */
+`
+
+export const StyledLink = styled(Link)`
+  transition: color 0.5s;
+  :hover {
+    color: red;
+  }
 `

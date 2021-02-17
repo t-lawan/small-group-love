@@ -1,7 +1,7 @@
 import React from "react"
 import styled from "styled-components"
-import { Link } from "gatsby";
 import { connect } from "react-redux"
+import { StyledLink } from "../../index.styles";
 
 const PageLinksSectionWrapper = styled.div`
     position: fixed;
@@ -17,7 +17,7 @@ const LinksWrapper = styled.div`
     align-items: baseline;
 `
 
-const PageLink = styled(Link)`
+const PageLink = styled(StyledLink)`
     color: blue;
     font-size: 2rem;
 `

@@ -1,9 +1,8 @@
 import React from "react"
 import styled from "styled-components"
-import { Link } from "gatsby";
+import { StyledLink } from "../../index.styles";
 
-const ProjectLink = styled(Link)`
-
+const ProjectLink = styled(StyledLink)`
 `
 
 const ProjectList = props => {
