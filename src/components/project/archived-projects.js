@@ -18,9 +18,8 @@ const ArchivedProjects = props => {
 
   return (
     <ProjectsWrapper>
-        <p> Archived Projects</p>
         <p> * </p>
-        <ProjectList projects={projects} />
+        <ProjectList showDate={true} projects={projects} />
     </ProjectsWrapper>
   )
 }

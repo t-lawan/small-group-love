@@ -64,7 +64,8 @@ export class Convert {
       contentfulModel.isCurrent, 
       contentfulModel.startDate, 
       contentfulModel.endDate,
-      content
+      content,
+      contentfulModel.participant
     )
   }
 

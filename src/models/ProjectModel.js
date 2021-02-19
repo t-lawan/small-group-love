@@ -6,7 +6,8 @@ export class ProjectModel {
     end_date;
     content;
     url;
-    constructor(id,title, url, isCurrent, start_date, end_date, content) {
+    participant;
+    constructor(id,title, url, isCurrent, start_date, end_date, content, participant) {
         this.id = id;
         this.title = title;
         this.url = url;
@@ -14,5 +15,6 @@ export class ProjectModel {
         this.start_date = start_date;
         this.end_date = end_date;
         this.content = content;
+        this.participant = participant;
     }
 }
