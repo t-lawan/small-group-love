@@ -1,5 +1,11 @@
 import styled, { createGlobalStyle } from "styled-components"
 import { Link } from "gatsby";
+import GaramondBold from './assets/fonts/AppleGaramond-Bold.ttf'
+import GaramondBoldItalic from './assets/fonts/AppleGaramond-BoldItalic.ttf'
+import GaramondItalic from './assets/fonts/AppleGaramond-Italic.ttf'
+import GaramondLight from './assets/fonts/AppleGaramond-Light.ttf'
+import GaramondLightItalic from './assets/fonts/AppleGaramond-LightItalic.ttf'
+import Garamond from './assets/fonts/AppleGaramond.ttf'
 
 export const size = {
   mobileS: "320px",
@@ -12,12 +18,53 @@ export const size = {
 }
 
 export const GlobalStyle = createGlobalStyle`
+  @font-face {
+    font-family: "Garamond";
+    src: url(${Garamond}) format('ttf');
+    font-weight: normal;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: "Garamond";
+    src: url(${GaramondBold}) format('ttf');
+    font-weight: bold;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: "Garamond";
+    src: url(${GaramondBoldItalic}) format('ttf');
+    font-weight: bold;
+    font-style: italic;
+  }
+
+  @font-face {
+    font-family: "Garamond";
+    src: url(${GaramondItalic}) format('ttf');
+    font-weight: normal;
+    font-style: italic;
+  }
+
+  @font-face {
+    font-family: "Garamond";
+    src: url(${GaramondLightItalic}) format('ttf');
+    font-weight: lighter;
+    font-style: italic;
+  }
+
+  @font-face {
+    font-family: "Garamond";
+    src: url(${GaramondLight}) format('ttf');
+    font-weight: lighter;
+    font-style: normal;
+  }
+
+
     * {
   box-sizing: border-box;
 }
 html,
 body {
-  font-family: "Arial Narrow", Arial, sans-serif;;
+  font-family: "Garamond";
   width: 100vw;
   width: 100%;
   height: 100%;
