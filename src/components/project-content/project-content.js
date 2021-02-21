@@ -1,7 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 import Content from "../content/content"
-import { PageWrapper } from "../page-content/page-content";
+import { PageWrapper, PageTitle } from "../page-content/page-content";
 
 
 const ProjectContent = props => {
@@ -10,6 +10,7 @@ const ProjectContent = props => {
   return (
     <PageWrapper>
       {/* {page.title && !props.isHome ? <PageTitle> {page.title.toUpperCase()}</PageTitle> : null} */}
+      <PageTitle> {project.participant}, {project.title} </PageTitle>
       {project.content ? <Content info={project.content} /> : null}
     </PageWrapper>
   )

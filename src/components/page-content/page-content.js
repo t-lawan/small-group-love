@@ -29,7 +29,9 @@ const ContentWrapper = styled.div`
   align-items: center; */
 `
 
-export const PageWrapper = styled.div``
+export const PageWrapper = styled.div`
+  text-align: center; 
+`
 export const PageTitle = styled.p``
 
 export 

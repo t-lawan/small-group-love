@@ -41,7 +41,7 @@ const ImageWrapper = styled.div`
   }
 `
 const TextWrapper = styled.div`
-  width: 90%;
+  /* width: 90%; */
   text-align: center;
 `
 export const GenerateContentSection = (section, index) => {
