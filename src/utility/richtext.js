@@ -33,6 +33,7 @@ export const ModalTypes = {
   PROJECTS: 'PROJECTS',
   CONTACT: 'CONTACT'
 }
+
 const Image = styled(Img)``
 const ImageWrapper = styled.div`
   padding-bottom: 0.5rem;

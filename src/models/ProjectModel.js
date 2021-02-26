@@ -7,7 +7,8 @@ export class ProjectModel {
     content;
     url;
     participant;
-    constructor(id,title, url, isCurrent, start_date, end_date, content, participant) {
+    page;
+    constructor(id,title, url, isCurrent, start_date, end_date, content, participant, page) {
         this.id = id;
         this.title = title;
         this.url = url;
@@ -16,5 +17,6 @@ export class ProjectModel {
         this.end_date = end_date;
         this.content = content;
         this.participant = participant;
+        this.page = page;
     }
 }

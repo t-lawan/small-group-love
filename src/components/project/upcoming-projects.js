@@ -2,11 +2,17 @@ import React from "react"
 import styled from "styled-components"
 import { connect } from "react-redux"
 import moment from 'moment';
-import { ProjectsWrapper } from "./current-projects";
+import { ProjectsWrapper, ProjectContentWrapper } from "./current-projects";
 import ProjectList from "./project-list";
+import { ProjectTypes } from "../../utility/helper";
+import ProjectContent from "../project-content/project-content";
 const UpcomingProjects = props => {
+  // let projects = props.projects.filter(pr => {
+  //   return moment().isBefore(pr.start_date, 'day');
+  // })
+
   let projects = props.projects.filter(pr => {
-    return moment().isBefore(pr.start_date, 'day');
+    return pr.page === ProjectTypes.UPCOMING
   })
 
   projects.sort((a, b) => {
@@ -17,6 +23,9 @@ const UpcomingProjects = props => {
     <ProjectsWrapper>
       <p> Forthcoming Projects</p>
       <ProjectList projects={projects} />
+      <ProjectContentWrapper>
+        <ProjectContent project={projects[0]} hideTitle={true} />
+      </ProjectContentWrapper>
     </ProjectsWrapper>
   )
 }

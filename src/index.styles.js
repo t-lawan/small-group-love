@@ -173,7 +173,7 @@ export const TwoColumnSection = styled.div`
 `
 
 export const StyledLink = styled(Link)`
-  transition: color 0.5s;
+  /* transition: color 0.5s; */
   :hover {
     color: red;
   }

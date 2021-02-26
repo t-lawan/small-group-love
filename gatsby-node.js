@@ -58,36 +58,36 @@ exports.createPages = ({ graphql, actions }) => {
               }
             }
           }
-              
-              allContentfulProject {
-                edges {
-                  node {
-                    contentful_id
-                    startDate
-                    endDate
-                    title
-                    isCurrent
-                    contentSection {
-                      contentful_id
-                      text {
-                        raw
-                      }
-                      title
-                      type
-                      images {
-                        fluid(quality: 100, maxWidth: 2000) {
-                          aspectRatio
-                          src
-                          srcSet
-                          sizes
-                        }
-                      }
+          allContentfulProject {
+            edges {
+              node {
+                contentful_id
+                startDate
+                endDate
+                title
+                isCurrent
+                contentSection {
+                  contentful_id
+                  text {
+                    raw
+                  }
+                  title
+                  type
+                  images {
+                    fluid(quality: 100, maxWidth: 2000) {
+                      aspectRatio
+                      src
+                      srcSet
+                      sizes
                     }
-                    url
-                    participant
                   }
                 }
+                url
+                participant
+                page
               }
+            }
+          }
         }
       `,
       { limit: 1000 }
