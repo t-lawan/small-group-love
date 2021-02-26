@@ -65,6 +65,14 @@ const State = props => {
                 }
               }
               type
+              backgroundImage {
+                fluid(quality: 100, maxWidth: 2000) {
+                  aspectRatio
+                  src
+                  srcSet
+                  sizes
+                }
+              }
             }
           }
         }
