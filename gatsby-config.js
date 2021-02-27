@@ -1,3 +1,8 @@
+require('dotenv').config({
+  path: `.env.${process.env.NODE_ENV}`
+});
+
+console.log(process.env.NODE_ENV, process.env.CONTENTFUL_ACCESS_TOKEN)
 module.exports = {
   siteMetadata: {
     title: `Gatsby Default Starter`,
@@ -38,8 +43,9 @@ module.exports = {
       options: {
         spaceId: `dvahc2a7pad6`,
         // Learn about environment variables: https://gatsby.dev/env-vars
-        accessToken: "DJ2RzaPJd_WxJtGhCMJWO_8bB4ger9allJtl165FVuU",
-        // downloadLocal: true,
+        accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
+        downloadLocal: true,
+        host: process.env.CONTENTFUL_HOST || 'cdn.contentful.com'
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality
