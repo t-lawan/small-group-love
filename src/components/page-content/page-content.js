@@ -6,12 +6,17 @@ import PageSection from "../page-section/page-section";
 import Img from "gatsby-image"
 
 const BackgroundImageWrapper = styled.div`
-    position: inherit;
+    position: fixed;
     width: 100%;
     height: 100%;
     z-index: 0;
 `
-const BackgroundImage = styled(Img)``
+const BackgroundImage = styled(Img)`
+    position: fixed;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+`
 
 const ContentWrapper = styled.div`
   z-index: 100;
