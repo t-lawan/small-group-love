@@ -2,21 +2,20 @@ import React from "react"
 import styled from "styled-components"
 import { Convert } from "../../utility/convert"
 import Content from "../content/content"
-import PageSection from "../page-section/page-section";
+import PageSection from "../page-section/page-section"
 import Img from "gatsby-image/withIEPolyfill"
 
-
 const BackgroundImageWrapper = styled.div`
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    z-index: 0;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
 `
 const BackgroundImage = styled(Img)`
-    position: fixed;
-    overflow: hidden;
-    width: 100%;
-    height: 100%;
+  position: fixed;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
 `
 
 const ContentWrapper = styled.div`
@@ -29,39 +28,43 @@ const ContentWrapper = styled.div`
   /* width: 100%; */
   height: 100%;
   top: 0;
-
+  a {
+    color: ${props => (props.isFixed ? "white !important" : "inherit")};
+  }
   /* display: flex;
   flex-direction: column;
   align-items: center; */
 `
 
 export const PageWrapper = styled.div`
-  text-align: center; 
+  text-align: center;
 `
 export const PageTitle = styled.p``
 
-export 
-const PageContent = props => {
+export const PageContent = props => {
   let page = props.page
-  let isLandscape = true;
-  if(page.backgroundImage) {
-    isLandscape = page.backgroundImage.fluid.aspectRatio < 1;
+  let isLandscape = true
+  if (page.backgroundImage) {
+    isLandscape = page.backgroundImage.fluid.aspectRatio < 1
   }
   return (
     <PageWrapper>
-    {page.backgroundImage ? (
-      <BackgroundImageWrapper>
-      <BackgroundImage objectFit={isLandscape ? 'cover' : 'contain'}  fluid={page.backgroundImage.fluid} />
-    </BackgroundImageWrapper>
-    ) : null}
+      {page.backgroundImage ? (
+        <BackgroundImageWrapper>
+          <BackgroundImage
+            objectFit={isLandscape ? "cover" : "contain"}
+            fluid={page.backgroundImage.fluid}
+          />
+        </BackgroundImageWrapper>
+      ) : null}
 
-    <ContentWrapper isFixed={page.backgroundImage}>
-      {page.title && !props.isHome ? <PageTitle> {page.title.toUpperCase()}</PageTitle> : null}
-      {page.content ? <Content info={page.content} /> : null}
-      <PageSection type={page.type} />
-    </ContentWrapper>
- 
-
+      <ContentWrapper isFixed={page.backgroundImage}>
+        {page.title && !props.isHome ? (
+          <PageTitle> {page.title.toUpperCase()}</PageTitle>
+        ) : null}
+        {page.content ? <Content info={page.content} /> : null}
+        <PageSection type={page.type} />
+      </ContentWrapper>
     </PageWrapper>
   )
 }
