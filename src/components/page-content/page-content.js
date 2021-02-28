@@ -3,7 +3,8 @@ import styled from "styled-components"
 import { Convert } from "../../utility/convert"
 import Content from "../content/content"
 import PageSection from "../page-section/page-section";
-import Img from "gatsby-image"
+import Img from "gatsby-image/withIEPolyfill"
+
 
 const BackgroundImageWrapper = styled.div`
     position: fixed;
@@ -42,12 +43,15 @@ export const PageTitle = styled.p``
 export 
 const PageContent = props => {
   let page = props.page
-  console.log('{AGE', page)
+  let isLandscape = true;
+  if(page.backgroundImage) {
+    isLandscape = page.backgroundImage.fluid.aspectRatio < 1;
+  }
   return (
     <PageWrapper>
     {page.backgroundImage ? (
       <BackgroundImageWrapper>
-      <BackgroundImage fluid={page.backgroundImage.fluid} />
+      <BackgroundImage objectFit={isLandscape ? 'cover' : 'contain'}  fluid={page.backgroundImage.fluid} />
     </BackgroundImageWrapper>
     ) : null}
 
