@@ -4,12 +4,17 @@ import { Convert } from "../../utility/convert"
 import Content from "../content/content"
 import PageSection from "../page-section/page-section"
 import Img from "gatsby-image/withIEPolyfill"
+import { size } from "../../index.styles";
 
 const BackgroundImageWrapper = styled.div`
   position: fixed;
   width: ${props => (props.isLandscape ? "60%" : "100%")};
   height: ${props => (props.isLandscape ? "80%" : "80%")};
   z-index: 0;
+  @media (max-width: ${size.tablet}) {
+    width: ${props => (props.isLandscape ? "60%" : "80%")};
+    margin: ${props => (!props.isLandscape ? "0 10%" : "0")};
+  }
 `
 const BackgroundImage = styled(Img)`
   position: fixed;
@@ -32,6 +37,10 @@ const ContentWrapper = styled.div`
     color: ${props => (props.isFixed ? "white !important" : "inherit")};
   }
   margin: 3rem 0;
+  width: ${props => (props.isFixed ? "60%" : "100%")};
+  @media (max-width: ${size.tablet}) {
+    padding: 0.5rem;
+  }
   /* display: flex;
   flex-direction: column;
   align-items: center; */
@@ -42,10 +51,11 @@ export const PageWrapper = styled.div`
 `
 
 export const PageSectionWrapper = styled.div`
-  width: 60%;
+  /* width: 60%; */
+
 `
 export const PageTitle = styled.p`
-  width: 60%;
+  width: ${props => (props.isFixed ? "60%" : "100%")};
 `
 
 export const PageContent = props => {
@@ -54,6 +64,8 @@ export const PageContent = props => {
   if (page.backgroundImage) {
     isLandscape = page.backgroundImage.fluid.aspectRatio < 1
   }
+
+  console.log('PROPS', props)
   return (
     <PageWrapper>
       {page.backgroundImage ? (
@@ -66,9 +78,9 @@ export const PageContent = props => {
         </BackgroundImageWrapper>
       ) : null}
 
-      <ContentWrapper isFixed={page.backgroundImage}>
+      <ContentWrapper isFixed={!!page.backgroundImage}>
         {page.title && !props.isHome ? (
-          <PageTitle> {page.title.toUpperCase()}</PageTitle>
+          <PageTitle isFixed={!(!!page.backgroundImage)}> {page.title.toUpperCase()}</PageTitle>
         ) : null}
         <PageSectionWrapper>
         {page.content ? <Content info={page.content} /> : null}

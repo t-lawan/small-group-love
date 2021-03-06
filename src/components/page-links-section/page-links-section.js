@@ -1,13 +1,18 @@
 import React from "react"
 import styled from "styled-components"
 import { connect } from "react-redux"
-import { StyledLink } from "../../index.styles";
+import { StyledLink, size } from "../../index.styles";
 
 const PageLinksSectionWrapper = styled.div`
     position: fixed;
     bottom: 20%;
     width: 100%;
     background: transparent;
+    z-index: 1000;
+    @media (max-width: ${size.mobileL}) {
+    bottom: 40%;
+
+  }
 `
 
 const LinksWrapper = styled.div`
@@ -20,11 +25,17 @@ const LinksWrapper = styled.div`
 const PageLink = styled(StyledLink)`
     color: blue;
     font-size: 2rem;
+    @media (max-width: ${size.mobileL}) {
+        font-size: 1rem;
+    }
 `
 
 const PageLinkSpan = styled.span`
     color: blue;
     font-size: 2rem;
+    @media (max-width: ${size.mobileL}) {
+        font-size: 1rem;
+    }
 `
 const PageLinksSection = props => {
     

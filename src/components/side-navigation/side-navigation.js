@@ -2,7 +2,7 @@ import React from "react"
 import styled from "styled-components"
 import { connect } from "react-redux"
 import { Link } from "gatsby";
-import { StyledLink } from "../../index.styles";
+import { StyledLink, size } from "../../index.styles";
 
 const SideNavigationWrapper = styled.div`
     padding-left: 1rem;
@@ -19,6 +19,9 @@ const SideNavigationLink = styled(StyledLink)`
     color: blue;
     padding-top: 1rem;
     font-size: 3rem;
+    @media (max-width: ${size.mobileL}) {
+        font-size: 1.5rem;
+    }
 `
 const SideNavigation = props => {
     let links = [];
