@@ -7,8 +7,8 @@ import Img from "gatsby-image/withIEPolyfill"
 
 const BackgroundImageWrapper = styled.div`
   position: fixed;
-  width: 100%;
-  height: 100%;
+  width: ${props => (props.isLandscape ? "60%" : "100%")};
+  height: ${props => (props.isLandscape ? "80%" : "80%")};
   z-index: 0;
 `
 const BackgroundImage = styled(Img)`
@@ -31,6 +31,7 @@ const ContentWrapper = styled.div`
   a {
     color: ${props => (props.isFixed ? "white !important" : "inherit")};
   }
+  margin: 3rem 0;
   /* display: flex;
   flex-direction: column;
   align-items: center; */
@@ -39,7 +40,13 @@ const ContentWrapper = styled.div`
 export const PageWrapper = styled.div`
   text-align: center;
 `
-export const PageTitle = styled.p``
+
+export const PageSectionWrapper = styled.div`
+  width: 60%;
+`
+export const PageTitle = styled.p`
+  width: 60%;
+`
 
 export const PageContent = props => {
   let page = props.page
@@ -50,10 +57,11 @@ export const PageContent = props => {
   return (
     <PageWrapper>
       {page.backgroundImage ? (
-        <BackgroundImageWrapper>
+        <BackgroundImageWrapper isLandscape={isLandscape}>
           <BackgroundImage
             objectFit={isLandscape ? "cover" : "contain"}
             fluid={page.backgroundImage.fluid}
+            isLandscape={isLandscape}
           />
         </BackgroundImageWrapper>
       ) : null}
@@ -62,7 +70,10 @@ export const PageContent = props => {
         {page.title && !props.isHome ? (
           <PageTitle> {page.title.toUpperCase()}</PageTitle>
         ) : null}
+        <PageSectionWrapper>
         {page.content ? <Content info={page.content} /> : null}
+
+        </PageSectionWrapper>
         <PageSection type={page.type} />
       </ContentWrapper>
     </PageWrapper>

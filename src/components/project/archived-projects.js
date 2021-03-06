@@ -5,7 +5,10 @@ import moment from "moment"
 import { ProjectsWrapper } from "./current-projects"
 import ProjectList from "./project-list"
 import { ProjectTypes } from "../../utility/helper";
-
+const ArchivedProjectsWrapper = styled(ProjectsWrapper)`
+  align-items: center;
+  width: 60%;
+`
 const ArchivedProjects = props => {
   // let projects = props.projects.filter(pr => {
   //   return moment().isAfter(pr.end_date, "day")
@@ -21,10 +24,10 @@ const ArchivedProjects = props => {
   })
 
   return (
-    <ProjectsWrapper>
+    <ArchivedProjectsWrapper>
       <p> * </p>
       <ProjectList showDate={true} projects={projects} />
-    </ProjectsWrapper>
+    </ArchivedProjectsWrapper>
   )
 }
 

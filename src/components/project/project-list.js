@@ -4,6 +4,7 @@ import { StyledLink } from "../../index.styles";
 import { DateManager } from "../../utility/date-manager";
 
 const ProjectLink = styled(StyledLink)`
+width: 60%;
 `
 
 const ProjectList = props => {

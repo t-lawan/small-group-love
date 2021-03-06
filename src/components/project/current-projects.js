@@ -9,11 +9,15 @@ export const ProjectsWrapper = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+  /* align-items: center; */
 `
 
 export const ProjectContentWrapper = styled.div`
   margin: 2rem 0;
+`
+
+export const ProjectPageTitle = styled.p`
+  width: 60%;
 `
 const CurrentProjects = props => {
   // let projects = props.projects.filter(pr => {
@@ -25,7 +29,7 @@ const CurrentProjects = props => {
   })
   return (
     <ProjectsWrapper>
-      <p> Currently Showing</p>
+      <ProjectPageTitle> Currently Showing</ProjectPageTitle>
       <ProjectList projects={projects} />
       <ProjectContentWrapper>
         <ProjectContent project={projects[0]} hideTitle={true} />
