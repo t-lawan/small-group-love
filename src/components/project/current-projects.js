@@ -4,6 +4,8 @@ import { connect } from "react-redux"
 import ProjectList from "./project-list";
 import { ProjectTypes } from "../../utility/helper";
 import ProjectContent from "../project-content/project-content";
+import { size } from "../../index.styles";
+import moment from "moment"
 
 export const ProjectsWrapper = styled.div`
   display: flex;
@@ -13,7 +15,10 @@ export const ProjectsWrapper = styled.div`
 `
 
 export const ProjectContentWrapper = styled.div`
-  margin: 2rem 0;
+  margin: 3rem 0;
+  @media (max-width: ${size.tablet}) {
+    margin: 0.5rem 0;
+  }
 `
 
 export const ProjectPageTitle = styled.p`
@@ -27,6 +32,11 @@ const CurrentProjects = props => {
   let projects = props.projects.filter(pr => {
     return pr.page === ProjectTypes.CURRENT
   })
+
+  projects.sort((a, b) => {
+    return moment(a.start_date).diff(moment(b.start_date))
+  })
+
   return (
     <ProjectsWrapper>
       <ProjectPageTitle> Currently Showing</ProjectPageTitle>

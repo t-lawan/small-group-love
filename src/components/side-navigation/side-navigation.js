@@ -19,8 +19,11 @@ const SideNavigationLink = styled(StyledLink)`
     color: blue;
     padding-top: 1rem;
     font-size: 3rem;
+    @media (max-width: ${size.tablet}) {
+        font-size: 2rem;
+    }
     @media (max-width: ${size.mobileL}) {
-        font-size: 1.5rem;
+        font-size: 1rem;
     }
 `
 const SideNavigation = props => {

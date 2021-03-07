@@ -5,9 +5,13 @@ import moment from "moment"
 import { ProjectsWrapper } from "./current-projects"
 import ProjectList from "./project-list"
 import { ProjectTypes } from "../../utility/helper";
+import { size } from "../../index.styles";
 const ArchivedProjectsWrapper = styled(ProjectsWrapper)`
   align-items: center;
   width: 60%;
+  @media (max-width: ${size.tablet}) {
+    width: 100%;
+  }
 `
 const ArchivedProjects = props => {
   // let projects = props.projects.filter(pr => {
@@ -17,10 +21,10 @@ const ArchivedProjects = props => {
     return pr.page === ProjectTypes.ARCHIVE
   })
 
-  // console.log("PROJECTS", projects)
+  console.log("PROJECTS", projects)
 
   projects.sort((a, b) => {
-    return moment(a).diff(moment(b))
+    return moment(a.end_date).diff(moment(b.end_date))
   })
 
   return (

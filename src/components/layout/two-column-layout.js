@@ -10,6 +10,7 @@ const SideNavigationWrapper = styled.div`
 `
 
 const MainContent = styled.div`
+    padding: 0.25rem;
 `
 const TwoColumnLayout = props => {
     return (

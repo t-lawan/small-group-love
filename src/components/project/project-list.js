@@ -1,10 +1,13 @@
 import React from "react"
 import styled from "styled-components"
-import { StyledLink } from "../../index.styles";
-import { DateManager } from "../../utility/date-manager";
+import { StyledLink, size } from "../../index.styles"
+import { DateManager } from "../../utility/date-manager"
 
 const ProjectLink = styled(StyledLink)`
-width: 60%;
+  width: 60%;
+  @media (max-width: ${size.mobileL}) {
+    /* width: 100%; */
+  }
 `
 
 const ProjectList = props => {
@@ -13,7 +16,13 @@ const ProjectList = props => {
   return (
     <>
       {projects.map((project, index) => (
-        <ProjectLink to={`/${project.url}`} key={index}>  {project.participant}, {project.title}{props.showDate ?  `, ${DateManager.toMonthYearString(project.end_date)}` : null} </ProjectLink>
+        <ProjectLink to={`/${project.url}`} key={index}>
+          {" "}
+          {project.participant}, {project.title}
+          {props.showDate
+            ? `, ${DateManager.toMonthYearString(project.end_date)}`
+            : null}{" "}
+        </ProjectLink>
       ))}
     </>
   )

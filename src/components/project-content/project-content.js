@@ -2,13 +2,13 @@ import React from "react"
 import { PageWrapper, PageTitle } from "../page-content/page-content";
 import styled from "styled-components"
 import Content from "../content/content"
+import { ProjectContentWrapper } from "../project/current-projects";
 
-const ProjectContentWrapper = styled.div`
-  margin: 2rem 0;
-`
+
 
 const ProjectContentTitle = styled.p`
   text-align: center;
+  width: 60%;
 `
 const ProjectContent = props => {
   let project = props.project
