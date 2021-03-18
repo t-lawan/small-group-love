@@ -22,7 +22,7 @@ export const ProjectContentWrapper = styled.div`
 `
 
 export const ProjectPageTitle = styled.p`
-  width: 60%;
+  /* width: 60%; */
 `
 const CurrentProjects = props => {
   // let projects = props.projects.filter(pr => {

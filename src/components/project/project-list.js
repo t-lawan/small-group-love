@@ -4,7 +4,7 @@ import { StyledLink, size } from "../../index.styles"
 import { DateManager } from "../../utility/date-manager"
 
 const ProjectLink = styled(StyledLink)`
-  width: 60%;
+  /* width: 60%; */
   @media (max-width: ${size.mobileL}) {
     /* width: 100%; */
   }

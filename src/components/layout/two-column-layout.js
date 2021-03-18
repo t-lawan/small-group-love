@@ -6,7 +6,10 @@ import { TwoColumnSection } from "../../index.styles";
 import SideNavigation from "../side-navigation/side-navigation";
 
 const SideNavigationWrapper = styled.div`
-    background: red;
+    background: transparent;
+    position: absolute;
+    width: 20%;
+    top: 0;
 `
 
 const MainContent = styled.div`
@@ -15,12 +18,14 @@ const MainContent = styled.div`
 const TwoColumnLayout = props => {
     return (
       <Layout>
-          <TwoColumnSection>
-              <SideNavigation showArchive={props.showArchive ? props.showArchive : false}/>
+          <div>
+              <SideNavigationWrapper>
+                <SideNavigation showArchive={props.showArchive ? props.showArchive : false}/>
+              </SideNavigationWrapper>
               <MainContent>
                   {props.children}
               </MainContent>
-          </TwoColumnSection>
+          </div>
       </Layout>
     )
   }

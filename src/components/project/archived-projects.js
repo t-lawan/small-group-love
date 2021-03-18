@@ -2,15 +2,16 @@ import React from "react"
 import styled from "styled-components"
 import { connect } from "react-redux"
 import moment from "moment"
-import { ProjectsWrapper } from "./current-projects"
+import { ProjectsWrapper, ProjectPageTitle } from "./current-projects"
 import ProjectList from "./project-list"
 import { ProjectTypes } from "../../utility/helper";
 import { size } from "../../index.styles";
 const ArchivedProjectsWrapper = styled(ProjectsWrapper)`
   align-items: center;
-  width: 60%;
+  width: 100%;
+
+  /* width: 60%; */
   @media (max-width: ${size.tablet}) {
-    width: 100%;
   }
 `
 const ArchivedProjects = props => {
@@ -29,6 +30,8 @@ const ArchivedProjects = props => {
 
   return (
     <ArchivedProjectsWrapper>
+      <ProjectPageTitle> Archive</ProjectPageTitle>
+
       <p> * </p>
       <ProjectList showDate={true} projects={projects} />
     </ArchivedProjectsWrapper>

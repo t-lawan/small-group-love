@@ -8,7 +8,7 @@ import { ProjectContentWrapper } from "../project/current-projects";
 
 const ProjectContentTitle = styled.p`
   text-align: center;
-  width: 60%;
+  /* width: 60%; */
 `
 const ProjectContent = props => {
   let project = props.project

@@ -65,7 +65,6 @@ export const PageContent = props => {
     isLandscape = page.backgroundImage.fluid.aspectRatio < 1
   }
 
-  console.log('PROPS', props)
   return (
     <PageWrapper>
       {page.backgroundImage ? (
@@ -79,9 +78,9 @@ export const PageContent = props => {
       ) : null}
 
       <ContentWrapper isFixed={!!page.backgroundImage}>
-        {page.title && !props.isHome ? (
+        {/* {page.title && !props.isHome ? (
           <PageTitle isFixed={!(!!page.backgroundImage)}> {page.title.toUpperCase()}</PageTitle>
-        ) : null}
+        ) : null} */}
         <PageSectionWrapper>
         {page.content ? <Content info={page.content} /> : null}
 
