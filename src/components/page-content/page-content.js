@@ -9,7 +9,7 @@ import { size } from "../../index.styles";
 const BackgroundImageWrapper = styled.div`
   position: fixed;
   width: ${props => (props.isLandscape ? "60%" : "100%")};
-  height: ${props => (props.isLandscape ? "80%" : "80%")};
+  height: ${props => (props.isLandscape ? "100%" : "80%")};
   z-index: 0;
   @media (max-width: ${size.tablet}) {
     width: ${props => (props.isLandscape ? "60%" : "80%")};
@@ -48,6 +48,9 @@ const ContentWrapper = styled.div`
 
 export const PageWrapper = styled.div`
   text-align: center;
+      display: flex;
+    flex-direction: column;
+    align-items: center;
 `
 
 export const PageSectionWrapper = styled.div`

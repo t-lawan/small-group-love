@@ -6,6 +6,7 @@ import { StyledLink, size } from "../../index.styles";
 
 const SideNavigationWrapper = styled.div`
     padding-left: 1rem;
+    z-index: 500;
 `
 
 const LinksWrapper = styled.div`
@@ -18,7 +19,8 @@ const LinksWrapper = styled.div`
 const SideNavigationLink = styled(StyledLink)`
     color: blue;
     padding-top: 1rem;
-    font-size: 3rem;
+    font-size: 2.5rem;
+    z-index: 500;
     @media (max-width: ${size.tablet}) {
         font-size: 2rem;
     }

@@ -12,20 +12,29 @@ const SideNavigationWrapper = styled.div`
     top: 0;
 `
 
+const Wrapper = styled.div`
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+`
+
 const MainContent = styled.div`
     padding: 0.25rem;
+    width: 80%;
 `
 const TwoColumnLayout = props => {
     return (
       <Layout>
-          <div>
-              <SideNavigationWrapper>
+                  <SideNavigationWrapper>
                 <SideNavigation showArchive={props.showArchive ? props.showArchive : false}/>
               </SideNavigationWrapper>
+          <Wrapper>
+  
               <MainContent>
                   {props.children}
               </MainContent>
-          </div>
+          </Wrapper>
       </Layout>
     )
   }
