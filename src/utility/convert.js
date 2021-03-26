@@ -30,6 +30,7 @@ export class Convert {
       contentfulModel.type,
       contentfulModel.images,
       contentfulModel.text,
+      contentfulModel.isTextTranslucent
     )
   }
 

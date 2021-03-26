@@ -63,6 +63,7 @@ export const PageTitle = styled.p`
 
 export const PageContent = props => {
   let page = props.page
+  console.log('PAGE', page)
   let isLandscape = true
   if (page.backgroundImage) {
     isLandscape = page.backgroundImage.fluid.aspectRatio < 1

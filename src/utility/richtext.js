@@ -44,6 +44,7 @@ const ImageWrapper = styled.div`
 const TextWrapper = styled.div`
   /* width: 90%; */
   text-align: center;
+  opacity: ${props => props.isTranslucent ? '0.7' : '1'};
 `
 export const GenerateContentSection = (section, index) => {
     let render
@@ -65,7 +66,7 @@ export const GenerateContentSection = (section, index) => {
         break;
       case "text":
         render = (
-          <TextWrapper key={index}>
+          <TextWrapper isTranslucent={section.isTextTranslucent} key={index}>
             {documentToReactComponents(
               JSON.parse(section.text.raw),
               richTextOptions
