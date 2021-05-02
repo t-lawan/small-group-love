@@ -45,7 +45,7 @@ module.exports = {
         spaceId: `dvahc2a7pad6`,
         // Learn about environment variables: https://gatsby.dev/env-vars
         accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
-        downloadLocal: true,
+        downloadLocal: false,
         host: process.env.CONTENTFUL_HOST || 'cdn.contentful.com'
       },
     },
