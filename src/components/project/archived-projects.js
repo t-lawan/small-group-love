@@ -22,8 +22,6 @@ const ArchivedProjects = props => {
     return pr.page === ProjectTypes.ARCHIVE
   })
 
-  console.log("PROJECTS", projects)
-
   projects.sort((a, b) => {
     return moment(a.end_date).diff(moment(b.end_date))
   })

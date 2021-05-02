@@ -47,8 +47,7 @@ const TextWrapper = styled.div`
   opacity: ${props => props.isTranslucent ? '0.7' : '1'};
 `
 export const GenerateContentSection = (section, index) => {
-    let render
-    console.log('INFO', section)
+    let render;
 
     switch (section.type) {
       case "images":
