@@ -97,13 +97,18 @@ exports.createPages = ({ graphql, actions }) => {
       throw result.errors
     }
 
+
     result.data.allContentfulPage.edges.forEach(edge => {
-      createPage({
-        // Path for this page — required
-        path: `${edge.node.url}`,
-        component: page,
-        context: edge.node
-      })
+      console.log('RESULT', edge.node)
+      if(edge.node.title !== "Main"){
+        createPage({
+          // Path for this page — required
+          path: `${edge.node.url}`,
+          component: page,
+          context: edge.node
+        })
+      }
+
     })
 
     result.data.allContentfulProject.edges.forEach(edge => {
