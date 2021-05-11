@@ -3,6 +3,7 @@ import styled from "styled-components"
 import PropTypes from "prop-types"
 import { GlobalStyle, TwoColumnSection } from "../../index.styles"
 import State from "../state/state";
+import SEO from "../seo/seo";
 
 const LayoutWrapper = styled.div`
   /* padding: 1rem;
@@ -25,6 +26,7 @@ const Layout = props => {
     <LayoutWrapper>
       <GlobalStyle />
       <State />
+      <SEO title={'Ge Hinnom'} />
       <MainWrapper>
         <Section>
             {props.children}
