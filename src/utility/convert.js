@@ -11,7 +11,8 @@ export class Convert {
   static toSiteModel = contentfulModel => {
     return new SiteModel(
       contentfulModel.name,
-      contentfulModel.description ? contentfulModel.description.description : ''
+      contentfulModel.description ? contentfulModel.description.description : '',
+      contentfulModel.sharingImage
     )
   }
 
