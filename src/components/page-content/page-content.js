@@ -21,10 +21,11 @@ const BackgroundImageWrapper = styled.div`
 const BackgroundImage = styled(Img)`
   /* position: fixed;
   overflow: hidden; */
-  width: 100%;
-  height: 100%;
+  width: ${props => (props.isLandscape ? "40vw" : "100%")};
+  left: ${props => (props.isLandscape ? "30vw" : "0")};
+  /* height: 100%; */
   /* width: ${props => (props.isLandscape ? "58%" : "100%")}; */
-  height: ${props => (props.isLandscape ? "100%" : "79%")};
+  height: ${props => (props.isLandscape ? "auto" : "79%")};
   z-index: 0;
   /* @media (max-width: ${size.tablet}) {
     width: ${props => (props.isLandscape ? "58%" : "80%")};
@@ -46,7 +47,7 @@ const ContentWrapper = styled.div`
     color: ${props => (props.isFixed ? "white !important" : "inherit")};
   }
   margin: 3rem 0;
-  width: ${props => (props.isFixed ? "50%" : "100%")};
+  width: ${props => (props.isFixed ? "40vw" : "100%")};
   @media (max-width: ${size.tablet}) {
     padding: 0.5rem;
   }
