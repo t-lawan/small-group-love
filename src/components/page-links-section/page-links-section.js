@@ -5,9 +5,10 @@ import { StyledLink, size } from "../../index.styles";
 
 const PageLinksSectionWrapper = styled.div`
     position: fixed;
-    bottom: 20%;
-    width: 100%;
+    bottom: 18%;
+    width: 80%;
     background: transparent;
+    left: 10%;
     z-index: 1000;
     @media (max-width: ${size.mobileL}) {
     bottom: 40%;
@@ -23,16 +24,20 @@ const LinksWrapper = styled.div`
 `
 
 const PageLink = styled(StyledLink)`
+    font-family: AppleGaramond;
+
     color: blue;
-    font-size: 2rem;
+    font-size: 3.3vw;
     @media (max-width: ${size.mobileL}) {
-        font-size: 1rem;
+        font-size: 3vh;
     }
 `
 
 const PageLinkSpan = styled.span`
     color: blue;
-    font-size: 2rem;
+    /* font-size: 2rem; */
+    font-size: 3.3vw;
+
     @media (max-width: ${size.mobileL}) {
         font-size: 1rem;
     }

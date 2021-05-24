@@ -62,6 +62,9 @@ const State = props => {
                     srcSet
                     sizes
                   }
+                  file {
+                    url
+                  }
                 }
                 isTextTranslucent
               }

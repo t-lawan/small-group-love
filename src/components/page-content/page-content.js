@@ -8,19 +8,28 @@ import { size } from "../../index.styles";
 
 const BackgroundImageWrapper = styled.div`
   position: fixed;
-  width: ${props => (props.isLandscape ? "60%" : "100%")};
-  height: ${props => (props.isLandscape ? "100%" : "80%")};
+  /* width: ${props => (props.isLandscape ? "58%" : "100%")};
+  height: ${props => (props.isLandscape ? "100%" : "80%")}; */
   z-index: 0;
-  @media (max-width: ${size.tablet}) {
-    width: ${props => (props.isLandscape ? "60%" : "80%")};
-    margin: ${props => (!props.isLandscape ? "0 10%" : "0")};
-  }
-`
-const BackgroundImage = styled(Img)`
-  position: fixed;
-  overflow: hidden;
   width: 100%;
   height: 100%;
+  /* @media (max-width: ${size.tablet}) {
+    width: ${props => (props.isLandscape ? "58%" : "80%")};
+    margin: ${props => (!props.isLandscape ? "0 10%" : "0")};
+  } */
+`
+const BackgroundImage = styled(Img)`
+  /* position: fixed;
+  overflow: hidden; */
+  width: 100%;
+  height: 100%;
+  /* width: ${props => (props.isLandscape ? "58%" : "100%")}; */
+  height: ${props => (props.isLandscape ? "100%" : "79%")};
+  z-index: 0;
+  /* @media (max-width: ${size.tablet}) {
+    width: ${props => (props.isLandscape ? "58%" : "80%")};
+    margin: ${props => (!props.isLandscape ? "0 10%" : "0")};
+  } */
 `
 
 const ContentWrapper = styled.div`
@@ -37,7 +46,7 @@ const ContentWrapper = styled.div`
     color: ${props => (props.isFixed ? "white !important" : "inherit")};
   }
   margin: 3rem 0;
-  width: ${props => (props.isFixed ? "60%" : "100%")};
+  width: ${props => (props.isFixed ? "50%" : "100%")};
   @media (max-width: ${size.tablet}) {
     padding: 0.5rem;
   }
@@ -73,7 +82,7 @@ export const PageContent = props => {
       {page.backgroundImage ? (
         <BackgroundImageWrapper isLandscape={isLandscape}>
           <BackgroundImage
-            objectFit={isLandscape ? "cover" : "contain"}
+            objectFit={isLandscape ? "contain" : "contain"}
             fluid={page.backgroundImage.fluid}
             isLandscape={isLandscape}
           />

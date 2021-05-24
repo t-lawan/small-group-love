@@ -44,6 +44,9 @@ exports.createPages = ({ graphql, actions }) => {
                     srcSet
                     sizes
                   }
+                  file {
+                    url
+                  }
                 }
                 isTextTranslucent
               }

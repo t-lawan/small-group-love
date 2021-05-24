@@ -19,40 +19,40 @@ export const size = {
 
 export const GlobalStyle = createGlobalStyle`
   @font-face {
-    font-family: "Garamond";
+    font-family: "AppleGaramond";
     src: url(${Garamond}) format('ttf');
     font-weight: normal;
     font-style: normal;
   }
   @font-face {
-    font-family: "Garamond";
+    font-family: "AppleGaramond";
     src: url(${GaramondBold}) format('ttf');
     font-weight: bold;
     font-style: normal;
   }
   @font-face {
-    font-family: "Garamond";
+    font-family: "AppleGaramond";
     src: url(${GaramondBoldItalic}) format('ttf');
     font-weight: bold;
     font-style: italic;
   }
 
   @font-face {
-    font-family: "Garamond";
+    font-family: "AppleGaramond";
     src: url(${GaramondItalic}) format('ttf');
     font-weight: normal;
     font-style: italic;
   }
 
   @font-face {
-    font-family: "Garamond";
+    font-family: "AppleGaramond";
     src: url(${GaramondLightItalic}) format('ttf');
     font-weight: lighter;
     font-style: italic;
   }
 
   @font-face {
-    font-family: "Garamond";
+    font-family: "AppleGaramond";
     src: url(${GaramondLight}) format('ttf');
     font-weight: lighter;
     font-style: normal;
@@ -64,7 +64,7 @@ export const GlobalStyle = createGlobalStyle`
 }
 html,
 body {
-  font-family: "Garamond";
+  font-family: "Arial Narrow";
   width: 100vw;
   width: 100%;
   height: 100%;
@@ -137,7 +137,6 @@ p, a{
   padding-top: 0;
   font-size: 1.2rem;
   line-height: 1.15;
-  font-weight: lighter;
   font-style: normal;
   @media (max-width: ${size.mobileL}) {
     font-size: 0.7rem;

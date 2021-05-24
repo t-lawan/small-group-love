@@ -19,7 +19,10 @@ const LinksWrapper = styled.div`
 const SideNavigationLink = styled(StyledLink)`
     color: blue;
     padding-top: 1rem;
-    font-size: 2.5rem;
+    font-family: AppleGaramond;
+    /* font-size: 2.5rem; */
+    font-size: 3.3vw;
+
     z-index: 500;
     @media (max-width: ${size.tablet}) {
         font-size: 2rem;
