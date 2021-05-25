@@ -5,7 +5,7 @@ import { StyledLink, size } from "../../index.styles";
 
 const PageLinksSectionWrapper = styled.div`
     position: fixed;
-    bottom: 18%;
+    bottom: 17vh;
     width: 80%;
     background: transparent;
     left: 10%;
