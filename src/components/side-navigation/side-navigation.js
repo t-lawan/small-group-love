@@ -24,6 +24,9 @@ const SideNavigationLink = styled(StyledLink)`
     font-size: 3.3vw;
 
     z-index: 500;
+    @media (max-width: ${size.mobileL}) {
+        font-size: 3vh;
+    }
     @media (max-width: ${size.tablet}) {
         font-size: 2rem;
     }

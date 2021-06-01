@@ -12,7 +12,7 @@ const UpcomingProjects = props => {
   // })
 
   let projects = props.projects.filter(pr => {
-    return pr.page === ProjectTypes.UPCOMING
+    return pr.pages.includes(ProjectTypes.UPCOMING);
   })
 
   projects.sort((a, b) => {

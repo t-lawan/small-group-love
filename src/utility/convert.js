@@ -48,6 +48,7 @@ export class Convert {
       contentfulModel.title, 
       contentfulModel.type,
       content,
+      contentfulModel.showTitle,
       contentfulModel.backgroundImage
     )
   }
@@ -68,7 +69,8 @@ export class Convert {
       contentfulModel.endDate,
       content,
       contentfulModel.participant,
-      contentfulModel.page
+      contentfulModel.page,
+      contentfulModel.pages
     )
   }
 

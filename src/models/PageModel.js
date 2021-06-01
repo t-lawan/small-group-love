@@ -4,11 +4,13 @@ export class PageModel {
     content;
     type;
     backgroundImage;
-    constructor(id,title, type, content, backgroundImage = null) {
+    showTitle;
+    constructor(id,title, type, content, showTitle, backgroundImage = null) {
         this.id = id;
         this.title = title;
         this.content = content;
         this.type = type;
+        this.showTitle= showTitle;
         this.backgroundImage = backgroundImage;
     }
 }

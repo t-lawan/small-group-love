@@ -30,12 +30,14 @@ const CurrentProjects = props => {
   // })
 
   let projects = props.projects.filter(pr => {
-    return pr.page === ProjectTypes.CURRENT
+    return pr.pages.includes(ProjectTypes.CURRENT);
   })
 
   projects.sort((a, b) => {
     return moment(a.start_date).diff(moment(b.start_date))
   })
+
+  console.log('PROJECTS', projects);
 
   return (
     <ProjectsWrapper>

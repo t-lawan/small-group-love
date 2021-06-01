@@ -59,6 +59,7 @@ exports.createPages = ({ graphql, actions }) => {
                   sizes
                 }
               }
+              showTitle
             }
           }
         }
@@ -89,6 +90,7 @@ exports.createPages = ({ graphql, actions }) => {
               url
               participant
               page
+              pages
             }
           }
         }

@@ -77,6 +77,7 @@ const State = props => {
                   sizes
                 }
               }
+              showTitle
             }
           }
         }
@@ -107,6 +108,7 @@ const State = props => {
               url
               participant
               page
+              pages
             }
           }
         }

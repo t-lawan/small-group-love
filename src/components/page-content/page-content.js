@@ -27,6 +27,9 @@ const BackgroundImage = styled(Img)`
   /* width: ${props => (props.isLandscape ? "58%" : "100%")}; */
   height: ${props => (props.isLandscape ? "auto" : "79%")};
   z-index: 0;
+  @media (max-width: ${size.tablet}) {
+    width: ${props => (props.isLandscape ? "60vw" : "100%")};
+  }
   /* @media (max-width: ${size.tablet}) {
     width: ${props => (props.isLandscape ? "58%" : "80%")};
     margin: ${props => (!props.isLandscape ? "0 10%" : "0")};
@@ -50,6 +53,7 @@ const ContentWrapper = styled.div`
   width: ${props => (props.isFixed ? "40vw" : "100%")};
   @media (max-width: ${size.tablet}) {
     padding: 0.5rem;
+    margin:0;
   }
   /* display: flex;
   flex-direction: column;

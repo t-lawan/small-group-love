@@ -31,8 +31,7 @@ function SEO({ description, lang, meta, title }) {
     `
   )
 
-  const siteInfo = Convert.toSiteModel(contentfulSiteInfo)
-  console.log("SITE INFO", siteInfo)
+  const siteInfo = Convert.toSiteModel(contentfulSiteInfo);
 
   // const metaDescription = description || site.siteMetadata.description
   // const metaTitle = title || site.siteMetadata.title

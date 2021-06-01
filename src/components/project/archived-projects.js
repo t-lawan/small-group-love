@@ -19,7 +19,9 @@ const ArchivedProjects = props => {
   //   return moment().isAfter(pr.end_date, "day")
   // })
   let projects = props.projects.filter(pr => {
-    return pr.page === ProjectTypes.ARCHIVE
+    // return pr.page === ProjectTypes.ARCHIVE
+    return pr.pages.includes(ProjectTypes.ARCHIVE);
+
   })
 
   projects.sort((a, b) => {

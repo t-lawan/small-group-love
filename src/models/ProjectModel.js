@@ -8,7 +8,8 @@ export class ProjectModel {
     url;
     participant;
     page;
-    constructor(id,title, url, isCurrent, start_date, end_date, content, participant, page) {
+    pages;
+    constructor(id,title, url, isCurrent, start_date, end_date, content, participant, page, pages) {
         this.id = id;
         this.title = title;
         this.url = url;
@@ -18,5 +19,6 @@ export class ProjectModel {
         this.content = content;
         this.participant = participant;
         this.page = page;
+        this.pages = pages;
     }
 }

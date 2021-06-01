@@ -57,6 +57,11 @@ const InfoTextWrapper = styled(TextWrapper)`
   p {
     font-size: 1.5vw;
     margin-bottom: 4vh;
+    @media (max-width: ${size.mobileL}) {
+        /* font-size: 3vh; */
+       margin-bottom: 1vh;
+
+    }
   }
 `
 export const GenerateContentSection = (section, index) => {
