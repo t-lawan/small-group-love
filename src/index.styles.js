@@ -6,7 +6,6 @@ import GaramondItalic from './assets/fonts/AppleGaramond-Italic.ttf'
 import GaramondLight from './assets/fonts/AppleGaramond-Light.ttf'
 import GaramondLightItalic from './assets/fonts/AppleGaramond-LightItalic.ttf'
 import Garamond from './assets/fonts/AppleGaramond.ttf'
-
 export const size = {
   mobileS: "320px",
   mobileM: "375px",
@@ -52,7 +51,7 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   @font-face {
-    font-family: "AppleGaramond";
+    font-family: "AppleGaramondLight";
     src: url(${GaramondLight}) format('ttf');
     font-weight: lighter;
     font-style: normal;

@@ -99,7 +99,7 @@ export const PageContent = props => {
           <PageTitle isFixed={!(!!page.backgroundImage)}> {page.title.toUpperCase()}</PageTitle>
         ) : null} */}
         <PageSectionWrapper>
-        {page.content ? <Content info={page.content} /> : null}
+        {page.content ? <Content page={page} info={page.content} /> : null}
 
         </PageSectionWrapper>
         <PageSection type={page.type} />

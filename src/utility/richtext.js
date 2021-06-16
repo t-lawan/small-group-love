@@ -6,8 +6,9 @@ import { size } from "../index.styles"
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 
 const PARAGRAPH = styled.p`
-  margin-bottom: 1.5rem;
-  line-height: 1.2rem;
+  /* margin-bottom: 1.5rem; */
+  /* line-height: 1.2rem; */
+  font-family: Arial Narrow;
 `
 
 const EXTERNALLINK = styled.a`
@@ -20,9 +21,8 @@ export const richTextOptions = {
     [MARKS.BOLD]: text => <strong>{text}</strong>
   },
   renderNode: {
-    [BLOCKS.PARAGRAPH]: (node, children) => <PARAGRAPH>{children}</PARAGRAPH>
-  },
-  renderNode: {
+    [BLOCKS.PARAGRAPH]: (node, children) => (<p>{children}</p>),
+    [BLOCKS.HEADING_1]: (node, children) => <PARAGRAPH>{children}</PARAGRAPH>,
     [INLINES.HYPERLINK]: (node, children) => (
       <EXTERNALLINK href={node.data.uri} target="__blank">
         {children}
@@ -56,7 +56,7 @@ const InfoTextWrapper = styled(TextWrapper)`
   padding-top: 0;
   p {
     font-size: 1.5vw;
-    margin-bottom: 4vh;
+    margin-bottom: 3vh;
     @media (max-width: ${size.mobileL}) {
         /* font-size: 3vh; */
        margin-bottom: 1vh;

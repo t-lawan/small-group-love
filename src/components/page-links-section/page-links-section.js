@@ -24,7 +24,7 @@ const LinksWrapper = styled.div`
 `
 
 const PageLink = styled(StyledLink)`
-    font-family: AppleGaramond;
+    font-family: AppleGaramondLight;
 
     color: blue;
     font-size: 3.3vw;
