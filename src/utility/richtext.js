@@ -52,7 +52,7 @@ const TextWrapper = styled.div`
 
 const InfoTextWrapper = styled(TextWrapper)`
   /* padding: 2rem; */
-  font-family: AppleGaramond;
+  font-family: AppleGaramondLight;
   padding-top: 0;
   p {
     font-size: 1.5vw;
