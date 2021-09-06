@@ -20,7 +20,7 @@ const ArchivedProjects = props => {
   // })
   let projects = props.projects.filter(pr => {
     // return pr.page === ProjectTypes.ARCHIVE
-    return pr.pages.includes(ProjectTypes.ARCHIVE)
+    return pr.pages ?  pr.pages.includes(ProjectTypes.ARCHIVE) : false
   })
   if (projects) {
     projects.sort((a, b) => {
