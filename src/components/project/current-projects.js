@@ -30,7 +30,7 @@ const CurrentProjects = props => {
   // })
 
   let projects = props.projects.filter(pr => {
-    return pr.pages.includes(ProjectTypes.CURRENT)
+    return pr.pages ?  pr.pages.includes(ProjectTypes.CURRENT) : false;
   })
 
   if (projects) {
