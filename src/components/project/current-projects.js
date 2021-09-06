@@ -1,10 +1,10 @@
 import React from "react"
 import styled from "styled-components"
 import { connect } from "react-redux"
-import ProjectList from "./project-list";
-import { ProjectTypes } from "../../utility/helper";
-import ProjectContent from "../project-content/project-content";
-import { size } from "../../index.styles";
+import ProjectList from "./project-list"
+import { ProjectTypes } from "../../utility/helper"
+import ProjectContent from "../project-content/project-content"
+import { size } from "../../index.styles"
 import moment from "moment"
 
 export const ProjectsWrapper = styled.div`
@@ -30,22 +30,29 @@ const CurrentProjects = props => {
   // })
 
   let projects = props.projects.filter(pr => {
-    return pr.pages.includes(ProjectTypes.CURRENT);
+    return pr.pages.includes(ProjectTypes.CURRENT)
   })
 
-  projects.sort((a, b) => {
-    return moment(a.start_date).diff(moment(b.start_date))
-  })
+  if (projects) {
+    projects.sort((a, b) => {
+      return moment(a.start_date).diff(moment(b.start_date))
+    })
+  }
 
-  console.log('PROJECTS', projects);
 
   return (
     <ProjectsWrapper>
-      <ProjectPageTitle> Currently Showing</ProjectPageTitle>
-      <ProjectList projects={projects} />
-      <ProjectContentWrapper>
-        <ProjectContent project={projects[0]} hideTitle={true} />
-      </ProjectContentWrapper>
+      {projects.length ? (
+        <>
+        <ProjectPageTitle> Currently Showing</ProjectPageTitle>
+      
+        
+          <ProjectList projects={projects} />
+          <ProjectContentWrapper>
+            <ProjectContent project={projects[0]} hideTitle={true} />
+          </ProjectContentWrapper>
+        </>
+      ) : null}
     </ProjectsWrapper>
   )
 }
