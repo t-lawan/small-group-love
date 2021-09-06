@@ -4,8 +4,8 @@ import { connect } from "react-redux"
 import moment from "moment"
 import { ProjectsWrapper, ProjectPageTitle } from "./current-projects"
 import ProjectList from "./project-list"
-import { ProjectTypes } from "../../utility/helper";
-import { size } from "../../index.styles";
+import { ProjectTypes } from "../../utility/helper"
+import { size } from "../../index.styles"
 const ArchivedProjectsWrapper = styled(ProjectsWrapper)`
   align-items: center;
   width: 100%;
@@ -20,20 +20,20 @@ const ArchivedProjects = props => {
   // })
   let projects = props.projects.filter(pr => {
     // return pr.page === ProjectTypes.ARCHIVE
-    return pr.pages.includes(ProjectTypes.ARCHIVE);
-
+    return pr.pages.includes(ProjectTypes.ARCHIVE)
   })
-
-  projects.sort((a, b) => {
-    return moment(a.end_date).diff(moment(b.end_date))
-  })
+  if (projects) {
+    projects.sort((a, b) => {
+      return moment(a.end_date).diff(moment(b.end_date))
+    })
+  }
 
   return (
     <ArchivedProjectsWrapper>
       <ProjectPageTitle> Archive</ProjectPageTitle>
 
       <p> * </p>
-      <ProjectList showDate={true} projects={projects} />
+      {projects ? <ProjectList showDate={true} projects={projects} /> : null}
     </ArchivedProjectsWrapper>
   )
 }
