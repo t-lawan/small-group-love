@@ -11,6 +11,11 @@ const PARAGRAPH = styled.p`
   font-family: Arial Narrow;
 `
 
+const SPACE = styled.div`
+  height: 2vh;
+  width: 100%;
+`
+
 const EXTERNALLINK = styled.a`
   margin-bottom: 1rem;
   font-size: inherit;
@@ -37,11 +42,25 @@ export const ModalTypes = {
 }
 
 const Image = styled(Img)``
+
+
+const AdjustableImageWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+`
+
+
 const ImageWrapper = styled.div`
   padding-bottom: 0.5rem;
   @media (max-width: ${size.mobileL}) {
     padding-bottom: 0.25rem;
   }
+`
+
+const WidthImageWrapper = styled(ImageWrapper)`
+  width: ${props => props.width};
 `
 const TextWrapper = styled.div`
   /* width: 90%; */
@@ -81,6 +100,22 @@ export const GenerateContentSection = (section, index) => {
         )
       }
       break
+    case "image_list":
+      if (section.image_list) {
+        render = (
+          <div key={index}>
+            {section.image_list.map((img, ind) => (
+              <AdjustableImageWrapper key={ind}>
+                <WidthImageWrapper width={`${img.imageWidth}%`} >
+                  <Image backgroundColor={"white"} fluid={img.image.fluid} />
+                </WidthImageWrapper>
+              </AdjustableImageWrapper>
+ 
+            ))}
+          </div>
+        )
+      }
+      break
     case "text":
       render = (
         <TextWrapper isTranslucent={section.isTextTranslucent} key={index}>
@@ -101,6 +136,11 @@ export const GenerateContentSection = (section, index) => {
         </InfoTextWrapper>
       )
       break
+    case "space": 
+      render = (
+        <SPACE  key={index}/>
+      )
+    break;
     default:
       break
   }

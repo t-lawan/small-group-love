@@ -104,6 +104,18 @@ const State = props => {
                     sizes
                   }
                 }
+                imageList {
+                  title
+                  imageWidth
+                  image {
+                    fluid(quality: 100, maxWidth: 2000) {
+                      aspectRatio
+                      src
+                      srcSet
+                      sizes
+                    }
+                  }
+                }
               }
               url
               participant

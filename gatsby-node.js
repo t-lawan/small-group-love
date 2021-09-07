@@ -86,6 +86,18 @@ exports.createPages = ({ graphql, actions }) => {
                     sizes
                   }
                 }
+                imageList {
+                  title
+                  imageWidth
+                  image {
+                    fluid(quality: 100, maxWidth: 2000) {
+                      aspectRatio
+                      src
+                      srcSet
+                      sizes
+                    }
+                  }
+                }
               }
               url
               participant
@@ -104,7 +116,6 @@ exports.createPages = ({ graphql, actions }) => {
 
 
     result.data.allContentfulPage.edges.forEach(edge => {
-      console.log('RESULT', edge.node)
       if(edge.node.title !== "Main"){
         createPage({
           // Path for this page — required
