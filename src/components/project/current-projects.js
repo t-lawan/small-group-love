@@ -47,7 +47,7 @@ const CurrentProjects = props => {
         <ProjectPageTitle> Currently Showing</ProjectPageTitle>
       
         
-          <ProjectList projects={projects} />
+          <ProjectList projects={projects} withLinks={false} />
           <ProjectContentWrapper>
             <ProjectContent project={projects[0]} hideTitle={true} />
           </ProjectContentWrapper>

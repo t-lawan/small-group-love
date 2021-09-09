@@ -10,19 +10,37 @@ const ProjectLink = styled(StyledLink)`
   }
 `
 
+const ProjectTitle = styled.p`
+
+`
+
 const ProjectList = props => {
   let projects = props.projects
 
   return (
     <>
       {projects.map((project, index) => (
-        <ProjectLink to={`/${project.url}`} key={index}>
+        <>
+        {props.withLinks ? (
+          <ProjectLink to={`/${project.url}`} key={index}>
           {" "}
           {project.participant}, {project.title}
           {props.showDate
             ? `, ${DateManager.toMonthYearString(project.end_date)}`
             : null}{" "}
         </ProjectLink>
+        ) : (
+          <ProjectTitle key={index}>
+          {" "}
+          {project.participant}, {project.title}
+          {props.showDate
+            ? `, ${DateManager.toMonthYearString(project.end_date)}`
+            : null}{" "}
+        </ProjectTitle>
+        )}
+
+        </>
+
       ))}
     </>
   )

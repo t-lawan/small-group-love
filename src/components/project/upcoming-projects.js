@@ -29,7 +29,7 @@ const UpcomingProjects = props => {
       <ProjectPageTitle> Forthcoming Projects</ProjectPageTitle>
       {projects ? (
         <>
-          <ProjectList projects={projects} />
+          <ProjectList projects={projects} withLinks={false} />
           <ProjectContentWrapper>
             <ProjectContent project={projects[0]} hideTitle={true} />
           </ProjectContentWrapper>

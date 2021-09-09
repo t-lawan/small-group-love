@@ -33,7 +33,7 @@ const ArchivedProjects = props => {
       <ProjectPageTitle> Archive</ProjectPageTitle>
 
       <p> * </p>
-      {projects ? <ProjectList showDate={true} projects={projects} /> : null}
+      {projects ? <ProjectList showDate={true} projects={projects} withLinks={true} /> : null}
     </ArchivedProjectsWrapper>
   )
 }
