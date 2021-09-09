@@ -22,18 +22,23 @@ export const GlobalStyle = createGlobalStyle`
     src: url(${Garamond}) format('ttf');
     font-weight: normal;
     font-style: normal;
+    font-display: block;
   }
   @font-face {
     font-family: "AppleGaramond";
     src: url(${GaramondBold}) format('ttf');
     font-weight: bold;
     font-style: normal;
+    font-display: block;
+
   }
   @font-face {
     font-family: "AppleGaramond";
     src: url(${GaramondBoldItalic}) format('ttf');
     font-weight: bold;
     font-style: italic;
+    font-display: block;
+
   }
 
   @font-face {
@@ -41,6 +46,8 @@ export const GlobalStyle = createGlobalStyle`
     src: url(${GaramondItalic}) format('ttf');
     font-weight: normal;
     font-style: italic;
+    font-display: block;
+
   }
 
   @font-face {
@@ -48,6 +55,8 @@ export const GlobalStyle = createGlobalStyle`
     src: url(${GaramondLightItalic}) format('ttf');
     font-weight: lighter;
     font-style: italic;
+    font-display: block;
+
   }
 
   @font-face {
@@ -55,6 +64,8 @@ export const GlobalStyle = createGlobalStyle`
     src: url(${GaramondLight}) format('ttf');
     font-weight: lighter;
     font-style: normal;
+    font-display: block;
+
   }
 
 
