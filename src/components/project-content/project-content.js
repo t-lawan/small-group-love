@@ -10,7 +10,7 @@ const ProjectContentTitle = styled.p`
 `
 
 const ContentWrapper = styled.div`
-  padding-top: 3.5rem;
+  padding-top: 2rem;
 `
 const ProjectContent = props => {
   let project = props.project

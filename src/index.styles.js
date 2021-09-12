@@ -74,7 +74,7 @@ export const GlobalStyle = createGlobalStyle`
 }
 html,
 body {
-  font-family: "Arial Narrow";
+  font-family: 'Arial Narrow', 'Arial', sans-serif;
   width: 100vw;
   width: 100%;
   height: 100%;

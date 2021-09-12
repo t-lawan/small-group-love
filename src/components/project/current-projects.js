@@ -15,7 +15,7 @@ export const ProjectsWrapper = styled.div`
 `
 
 export const ProjectContentWrapper = styled.div`
-  margin: 3rem 0;
+  /* margin: 3rem 0; */
   @media (max-width: ${size.tablet}) {
     margin: 0.5rem 0;
   }

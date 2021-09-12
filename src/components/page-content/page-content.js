@@ -49,7 +49,7 @@ const ContentWrapper = styled.div`
   a {
     color: ${props => (props.isFixed ? "white !important" : "inherit")};
   }
-  margin: 3rem 0;
+  margin: 2rem 0;
   width: ${props => (props.isFixed ? "40vw" : "100%")};
   @media (max-width: ${size.tablet}) {
     padding: 0.5rem;
