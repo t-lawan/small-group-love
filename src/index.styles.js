@@ -4,6 +4,8 @@ import GaramondBold from './assets/fonts/AppleGaramond-Bold.ttf'
 import GaramondBoldItalic from './assets/fonts/AppleGaramond-BoldItalic.ttf'
 import GaramondItalic from './assets/fonts/AppleGaramond-Italic.ttf'
 import GaramondLight from './assets/fonts/AppleGaramond-Light.ttf'
+import GaramondLightWoff from './assets/fonts/applegaramondlight.woff'
+import GaramondLightWoff2 from './assets/fonts/applegaramondlight.woff2'
 import GaramondLightItalic from './assets/fonts/AppleGaramond-LightItalic.ttf'
 import Garamond from './assets/fonts/AppleGaramond.ttf'
 export const size = {
@@ -17,7 +19,7 @@ export const size = {
 }
 
 export const GlobalStyle = createGlobalStyle`
-  @font-face {
+  ${'' /* @font-face {
     font-family: "AppleGaramond";
     src: url(${Garamond}) format('ttf');
     font-weight: normal;
@@ -57,13 +59,13 @@ export const GlobalStyle = createGlobalStyle`
     font-style: italic;
     font-display: block;
 
-  }
+  } */}
 
   @font-face {
     font-family: "AppleGaramondLight";
-    src: url(${GaramondLight}) format('ttf');
-    font-weight: lighter;
-    font-style: normal;
+    src: url(${GaramondLightWoff2}) format('woff2'), url(${GaramondLightWoff}) format('woff');
+    ${'' /* font-weight: lighter;
+    font-style: normal; */}
     font-display: block;
 
   }
