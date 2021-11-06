@@ -24,8 +24,6 @@ const UpcomingProjects = props => {
     })
   }
 
-  console.log('PROJECTS', projects);
-
   return (
     <ProjectsWrapper>
       <ProjectPageTitle> Forthcoming Projects</ProjectPageTitle>
