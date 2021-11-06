@@ -130,7 +130,7 @@ exports.createPages = ({ graphql, actions }) => {
     result.data.allContentfulProject.edges.forEach(edge => {
       createPage({
         // Path for this page — required
-        path: `${edge.node.url}`,
+        path: `${edge.node.slug}`,
         component: project,
         context: edge.node
       })

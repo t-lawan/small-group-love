@@ -24,10 +24,12 @@ const UpcomingProjects = props => {
     })
   }
 
+  console.log('PROJECTS', projects);
+
   return (
     <ProjectsWrapper>
       <ProjectPageTitle> Forthcoming Projects</ProjectPageTitle>
-      {projects ? (
+      {projects && projects.length > 0 ? (
         <>
           <ProjectList projects={projects} withLinks={false} />
           <ProjectContentWrapper>

@@ -20,7 +20,7 @@ const ProjectList = props => {
   return (
     <>
       {projects.map((project, index) => (
-        <>
+        <React.Fragment key={index}>
         {props.withLinks ? (
           <ProjectLink to={`/${project.url}`} key={index}>
           {" "}
@@ -39,7 +39,7 @@ const ProjectList = props => {
         </ProjectTitle>
         )}
 
-        </>
+        </React.Fragment>
 
       ))}
     </>
